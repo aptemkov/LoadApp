@@ -2,7 +2,7 @@ package com.github.aptemkov.loadapp
 
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.Canvas
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import kotlin.properties.Delegates
@@ -20,13 +20,35 @@ class LoadingButton @JvmOverloads constructor(
     }
 
 
+    private var paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.FILL
+        textAlign = Paint.Align.CENTER
+        textSize = 36F
+        typeface = Typeface.create("", Typeface.BOLD)
+        color = resources.getColor(R.color.colorPrimary)
+    }
+
+    private var textBounds = Rect()
+
+
     init {
+        isClickable = true
 
     }
 
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+
+        val text =
+            if (buttonState == ButtonState.Loading) "Loading..." else "Download"
+
+        canvas?.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
+
+        paint.getTextBounds(text,0, text.length, textBounds)
+        paint.color = Color.WHITE
+        canvas?.drawText(text, (width / 2).toFloat(), ((height + 30) / 2).toFloat(), paint)
+
 
     }
 

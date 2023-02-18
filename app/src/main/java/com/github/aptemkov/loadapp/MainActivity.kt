@@ -1,5 +1,6 @@
 package com.github.aptemkov.loadapp
 
+import android.animation.ObjectAnimator
 import android.app.DownloadManager
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -7,6 +8,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -32,8 +34,23 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         binding.customButton.setOnClickListener {
-            download()
+            //download()
         }
+
+        binding.testButton.setOnClickListener {
+            colorizer()
+        }
+
+    }
+
+
+    private fun colorizer() {
+        val animator = ObjectAnimator.ofArgb(binding.testButton,
+            "backgroundColor", Color.BLACK, Color.RED)
+        animator.setDuration(500)
+        animator.repeatCount = 1
+        animator.repeatMode = ObjectAnimator.REVERSE
+        animator.start()
     }
 
     private val receiver = object : BroadcastReceiver() {
