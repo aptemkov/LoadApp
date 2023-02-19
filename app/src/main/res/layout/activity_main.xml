@@ -47,18 +47,21 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
+                android:id="@+id/rbGlide"
                 android:text="Glide"
                 android:textSize="32sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <RadioButton
+                android:id="@+id/rbLoadApp"
                 android:text="LoadApp"
                 android:layout_width="match_parent"
                 android:textSize="32sp"
                 android:layout_height="wrap_content" />
 
             <RadioButton
+                android:id="@+id/rbRetrofit"
                 android:text="Retrofit"
                 android:layout_width="match_parent"
                 android:textSize="32sp"
