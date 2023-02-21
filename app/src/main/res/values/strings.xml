@@ -11,4 +11,10 @@
     <string name="button_name">Click me</string>
     <string name="button_loading">We are loading </string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="return_back">Return back</string>
+    <string name="file_name">File name:</string>
+    <string name="status">Status</string>
+    <string name="succes_message">Success</string>
+    <string name="failure_message">Failure</string>
+    <string name="ok">OK</string>
 </resources>

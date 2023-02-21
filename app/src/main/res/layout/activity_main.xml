@@ -20,20 +20,25 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="test"
-            android:id="@+id/test_button"
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:cropToPadding="true"
+            android:src="@drawable/cloud_logo"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:contentDescription="logo" />
 
         <RadioGroup
             android:id="@+id/radio_group"
@@ -42,29 +47,31 @@
             app:layout_constraintBottom_toTopOf="@id/custom_button"
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
-            android:layout_margin="16dp"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/logoImageView">
 
             <RadioButton
                 android:id="@+id/rbGlide"
-                android:text="Glide"
-                android:textSize="32sp"
+                android:text="Glide: Image Loading Library By BumpTech"
+                android:textSize="24sp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
 
             <RadioButton
                 android:id="@+id/rbLoadApp"
-                android:text="LoadApp"
+                android:text="LoadApp - current repository by Udacity"
                 android:layout_width="match_parent"
-                android:textSize="32sp"
-                android:layout_height="wrap_content" />
+                android:textSize="24sp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
 
             <RadioButton
                 android:id="@+id/rbRetrofit"
-                android:text="Retrofit"
+                android:text="Retrofit: Type-safe HTTP client by Square, Inc"
                 android:layout_width="match_parent"
-                android:textSize="32sp"
+                android:textSize="24sp"
                 android:layout_height="wrap_content" />
 
         </RadioGroup>

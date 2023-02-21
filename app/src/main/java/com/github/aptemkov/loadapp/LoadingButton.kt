@@ -35,7 +35,7 @@ class LoadingButton @JvmOverloads constructor(
 
 
     init {
-        isClickable = true
+        visibility = GONE
 
         valueAnimator.addUpdateListener {
             progress = (it.animatedValue as Float).toDouble()
