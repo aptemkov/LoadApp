@@ -20,9 +20,9 @@ class DetailActivity : AppCompatActivity() {
         val title = intent.getStringExtra("title").toString()
         val content = intent.getStringExtra("content").toString()
 
-        binding.fileName.text = content
+        binding.contentDetail.fileName.text = content
 
-        binding.backButton.setOnClickListener {
+        binding.contentDetail.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             finish()
             startActivity(intent)
@@ -32,12 +32,12 @@ class DetailActivity : AppCompatActivity() {
         val random = (Math.random() * 2).toInt()
         when(random) {
             1 -> {
-                binding.status.text = getString(R.string.succes_message)
-                binding.status.setTextColor(Color.BLACK)
+                binding.contentDetail.status.text = getString(R.string.succes_message)
+                binding.contentDetail.status.setTextColor(Color.BLACK)
             }
             else -> {
-                binding.status.text = getString(R.string.failure_message)
-                binding.status.setTextColor(Color.RED)
+                binding.contentDetail.status.text = getString(R.string.failure_message)
+                binding.contentDetail.status.setTextColor(Color.RED)
             }
         }
     }
